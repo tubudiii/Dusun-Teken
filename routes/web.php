@@ -10,7 +10,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\LayananController;
+// use App\Http\Controllers\LayananController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\WilayahController;
 use App\Http\Controllers\AnggaranController;
@@ -80,7 +80,7 @@ Route::get('/umkm/{umkm:slug}', [UmkmController::class, 'detail']);
 
 Route::get('/kontak', [KontakController::class, 'index']);
 
-Route::get('/layanan', [LayananController::class, 'index']);
+// Route::get('/layanan', [LayananController::class, 'index']);
 
 Route::get('/gallery', [GalleryController::class, 'index']);
 
@@ -90,7 +90,7 @@ Route::get('/pengumuman/{pengumuman:slug}', [AnnouncementController::class, 'det
 Route::get('/apbdesa', [AnggaranController::class, 'index']);
 Route::get('/apbdesa/{anggaran:slug}', [AnggaranController::class, 'detail']);
 
-//Admin Dashboard 
+//Admin Dashboard
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home');

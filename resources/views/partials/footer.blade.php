@@ -20,19 +20,19 @@
               <li><i class="bx bx-chevron-right"></i> <a href="/">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/berita">Berita</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/umkm">Umkm</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/data-desa">Data Desa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/data-desa">Data Dusun</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/kontak">Kontak Kami</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Profil Desa</h4>
+            <h4>Profil Dusun</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/wilayah">Wilayah</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/sejarah">Sejarah</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/visi-misi">Visi & Misi</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/perangkat-desa">Perangkat Desa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/peta-desa">Peta Desa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/perangkat-desa">Perangkat Dusun</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/peta-desa">Peta Dusun</a></li>
             </ul>
           </div>
 

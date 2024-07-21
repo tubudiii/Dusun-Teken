@@ -17,7 +17,7 @@ class AdminGalleryController extends Controller
     public function index()
     {
         return view('admin.gallery.index', [
-            'gallerys'  => Gallery::orderBy('id', 'DESC')->get()
+            'gallerys' => Gallery::orderBy('id', 'DESC')->get()
         ]);
     }
 
@@ -35,32 +35,34 @@ class AdminGalleryController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'gambar'       => 'required|mimes:png,jpg,jpeg',
-            'keterangan'   => 'required'
+            'gambar' => 'required|mimes:png,jpg,jpeg|max:5120', // 2048 KB = 2 MB
+            'keterangan' => 'required'
         ], [
-            'gambar.required'       => 'Form wajib di isi !',
-            'gambar.mimes'          => 'Format yang di izinkan png,jpg,jpeg !',
-            'keterangan.required'   => 'Form wajib di,'
+            'gambar.required' => 'Form wajib di isi !',
+            'gambar.mimes' => 'Format yang di izinkan png,jpg,jpeg !',
+            'gambar.max' => 'Ukuran gambar maksimal adalah 2MB !',
+            'keterangan.required' => 'Form wajib di isi !'
         ]);
 
-        if ($request->hasFile('gambar')) {
-            $path       = 'img-gallery/';
-            $file       = $request->file('gambar');
-            $extension  = $file->getClientOriginalExtension();
-            $fileName   = uniqid() . '.' . $extension;
-            $gambar     = $file->storeAs($path, $fileName, 'public');
-        } else {
-            $gambar     = null;
-        }
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
 
+        $path = 'img-gallery/';
+        $fileName = null;
+
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = uniqid() . '.' . $extension;
+            $file->storeAs($path, $fileName, 'public');
+        }
+
         Gallery::create([
-            'gambar'       => $path . $fileName,
-            'keterangan'   => $request->keterangan,
-            'user_id'      => auth()->user()->id,
+            'gambar' => $fileName ? $path . $fileName : null,
+            'keterangan' => $request->keterangan,
+            'user_id' => auth()->user()->id,
         ]);
 
         return redirect('/admin/gallery')->with('success', 'Berhasil menambahkan informasi layanan baru');
@@ -73,7 +75,7 @@ class AdminGalleryController extends Controller
     {
         $gallery = Gallery::find($id);
         return view('admin.gallery.edit', [
-            'gallery'   => $gallery,
+            'gallery' => $gallery,
         ]);
     }
 
@@ -84,27 +86,27 @@ class AdminGalleryController extends Controller
     {
         $gallery = Gallery::find($id);
         $validator = Validator::make($request->all(), [
-            'keterangan'   => 'required'
+            'keterangan' => 'required'
         ], [
-            'keterangan.required'   => 'Form wajib di,'
+            'keterangan.required' => 'Form wajib di,'
         ]);
 
         if ($request->hasFile('gambar')) {
             if ($gallery->gambar) {
                 unlink('.' . Storage::url($gallery->gambar));
             }
-            $path       = 'img-gallery/';
-            $file       = $request->file('gambar');
-            $extension  = $file->getClientOriginalExtension();
-            $fileName   = uniqid() . '.' . $extension;
-            $gambar     = $file->storeAs($path, $fileName, 'public');
+            $path = 'img-gallery/';
+            $file = $request->file('gambar');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = uniqid() . '.' . $extension;
+            $gambar = $file->storeAs($path, $fileName, 'public');
         } else {
             $validator = Validator::make($request->all(), [
-                'gambar'       => 'mimes:png,jpg,jpeg',
-                'keterangan'   => 'required'
+                'gambar' => 'mimes:png,jpg,jpeg',
+                'keterangan' => 'required'
             ], [
-                'gambar.mimes'          => 'Format yang di izinkan png,jpg,jpeg !',
-                'keterangan.required'   => 'Form wajib di,'
+                'gambar.mimes' => 'Format yang di izinkan png,jpg,jpeg !',
+                'keterangan.required' => 'Form wajib di,'
             ]);
             $gambar = $gallery->gambar;
         }
@@ -114,8 +116,8 @@ class AdminGalleryController extends Controller
         }
 
         $gallery->update([
-            'gambar'        => $gambar,
-            'keterangan'    => $request->keterangan
+            'gambar' => $gambar,
+            'keterangan' => $request->keterangan
         ]);
 
         return redirect('/admin/gallery')->with('success', 'Berhasil memperbarui data gallery');

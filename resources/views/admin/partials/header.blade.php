@@ -6,12 +6,12 @@
             <i class="ti ti-menu-2"></i>
           </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link nav-icon-hover" href="javascript:void(0)">
             <i class="ti ti-bell-ringing"></i>
             <div class="notification bg-primary rounded-circle"></div>
           </a>
-        </li>
+        </li> --}}
       </ul>
       <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
@@ -28,7 +28,7 @@
                   <p class="mb-0 fs-3">Profil</p>
                 </a>
 
-                <a href="#" class="d-flex align-items-center gap-2 dropdown-item btn" onclick="event.preventDefault(); 
+                <a href="#" class="d-flex align-items-center gap-2 dropdown-item btn" onclick="event.preventDefault();
                         Swal.fire({
                             title: 'Konfirmasi Keluar',
                             text: 'Apakah Anda yakin ingin keluar?',
