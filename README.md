@@ -1,88 +1,258 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dusun Teken Village Profile Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A village profile website built with Laravel 10. Designed to digitally present information about **Dusun Teken**, including village profile, news, announcements, UMKM, galleries, and an admin management panel.
 
-# Website Portal Desa Dinamis
+---
 
-Website portal desa Laravel adalah sebuah website yang dibangun menggunakan framework Laravel. Website ini dapat digunakan oleh pemerintah desa untuk mengelola berbagai informasi dan layanan kepada masyarakat.. Berikut adalah beberapa fitur dan komponen utama yang dapat ada dalam aplikasi POS berbasis web Laravel:
+## Features
 
-# Fitur
+### Public Pages
+| Feature | Description |
+|---|---|
+| **Beranda (Homepage)** | Hero slider, latest news, video profile |
+| **Profil Dusun** | Wilayah, Sejarah, Visi & Misi, Perangkat Dusun, Peta Dusun |
+| **Data Dusun** | Village statistics with tables & charts (Chart.js) — Agama, Jenis Kelamin, Pekerjaan |
+| **Berita** | News articles with categories, comments & replies |
+| **Pengumuman** | Announcements with WYSIWYG editor |
+| **Gallery** | Photo gallery with lightbox |
+| **UMKM** | Micro, small & medium enterprise listings |
+| **APBDesa** | Village budget information |
+| **Kontak** | Contact information page |
 
-1. Menampilkan Beranda/Landing page
-2. Menampilkan Profil Desa
-    - Wilayah
-    - Sejarah
-    - Visi-misi
-    - Perangkat desa
-    - Peta desa
-3. Menampilkan Umkm Desa
-4. Menampilkan Berita Desa
-5. Menampilkan Data Desa (Tabel & Grafik)
-    - Data Agama
-    - Data Pekerjaan
-    - Data Jenis kelamin
-6. Kontak
+### Admin Panel
+| Feature | Description |
+|---|---|
+| **Dashboard** | Statistics: visitors today, total news, total UMKM products |
+| **Slider** | Manage homepage hero sliders |
+| **Profil Desa** | Wilayah, Sejarah, Visi & Misi management |
+| **Perangkat Desa** | Village officials (CRUD) |
+| **Peta Desa** | Village map settings |
+| **Berita** | Full news management with slug, draft/publish status, views tracking |
+| **Kategori** | News categories |
+| **Komentar** | Manage news comments |
+| **Data Desa** | Agama, Jenis Kelamin, Pekerjaan data (CRUD) |
+| **UMKM** | UMKM management |
+| **Gallery** | Gallery management |
+| **Pengumuman** | Announcements with image upload |
+| **APBDes** | Village budget management |
+| **Kontak** | Contact info settings |
+| **Identitas Situs** | Site identity (logo, village name, address) |
+| **Video Profile** | YouTube video embed |
+| **Profil** | Admin profile & password change |
 
-## Teknologi
+---
 
-Aplikasi Point of Sale dibangun menggunakan beberapa Teknologi diantaranya :
+## Tech Stack
 
--   Laravel - The PHP Framework for Web Artisans
--   JavaScript - JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.
--   Bootstrap - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
+| Technology | Purpose |
+|---|---|
+| **Laravel 10** | PHP Framework |
+| **PHP 8.1+** | Backend language |
+| **MySQL** | Database |
+| **Bootstrap 5** | Frontend CSS framework |
+| **Vite** | Asset bundler |
+| **SASS** | CSS preprocessor |
+| **Chart.js** | Data visualization (public) |
+| **ApexCharts** | Admin dashboard charts |
+| **CKEditor 5** | WYSIWYG editor |
+| **SweetAlert2** | Alert & confirmation dialogs |
+| **DataTables** | Admin table sorting/searching |
+| **AOS** | Scroll animations |
+| **GLightbox** | Lightbox gallery |
+| **Swiper** | Carousel/slider |
+| **Eloquent Sluggable** | Auto-slug generation |
+| **Laravel Sanctum** | Authentication |
+| **Laravel UI** | Auth scaffolding |
 
-## Installasi
+---
 
-Lakukan Clone Project/Unduh manual .
+## Project Structure
 
-Aktifkan Xampp Control Panel, lalu akses ke http://localhost/phpmyadmin/.
-
-Buat database dengan nama 'pos'.
-
-Jika melakukan Clone Project, rename file .env.example dengan env dan hubungkan
-database nya dengan mengisikan nama database, 'DB_DATABASE=pos'.
-
-Kemudian, Ketik pada terminal :
-
-```sh
-php artisan migrate
+```
+desa/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin*.php       # Admin CRUD controllers
+│   │   │   ├── BerandaController.php
+│   │   │   ├── BeritaController.php
+│   │   │   ├── GalleryController.php
+│   │   │   ├── UmkmController.php
+│   │   │   └── ...
+│   │   ├── Kernel.php
+│   │   └── Middleware/
+│   │       └── LogoSite.php     # Shares site data globally
+│   ├── Models/
+│   │   ├── User.php
+│   │   ├── Situs.php
+│   │   ├── Berita.php
+│   │   ├── Slider.php
+│   │   ├── Gallery.php
+│   │   └── ... (24 models total)
+│   └── Providers/
+├── bootstrap/
+├── config/
+│   ├── app.php                  # Timezone: Asia/Jakarta, locale: id
+│   ├── database.php
+│   └── filesystems.php
+├── database/
+│   ├── migrations/              # 25 migration files
+│   └── seeders/
+│       └── DatabaseSeeder.php   # Default admin + sample data
+├── public/
+│   ├── assets/                  # Frontend assets (CSS, JS, vendor)
+│   ├── admin/                   # Admin panel assets
+│   └── storage/                 # Symlink to storage/app/public
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   ├── main.blade.php        # Public layout
+│       │   └── app.blade.php         # Auth layout
+│       ├── admin/
+│       │   ├── layouts/main.blade.php# Admin layout
+│       │   └── ... (CRUD views)
+│       ├── index.blade.php           # Homepage
+│       ├── berita/                   # News views
+│       ├── umkm/                     # UMKM views
+│       ├── gallery/                  # Gallery views
+│       └── ...
+├── routes/
+│   ├── web.php                      # All web routes
+│   └── api.php
+├── .env.example
+├── composer.json
+├── package.json
+└── vite.config.js
 ```
 
-Lalu ketik juga
+---
 
-```sh
-php artisan migrate:fresh --seed
+## Requirements
+
+- PHP >= 8.1
+- Composer
+- MySQL / MariaDB
+- Node.js & npm (for frontend asset building)
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd desa
 ```
 
-Jalankan aplikasi
+### 2. Install PHP dependencies
 
-```sh
+```bash
+composer install
+```
+
+### 3. Install & build frontend assets
+
+```bash
+npm install
+npm run build
+```
+
+### 4. Environment setup
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and set your database credentials:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dusun_teken
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 5. Generate application key
+
+```bash
+php artisan key:generate
+```
+
+### 6. Create storage symlink
+
+```bash
+php artisan storage:link
+```
+
+> This creates `public/storage` → `storage/app/public` symlink for serving uploaded images.
+
+### 7. Database migration & seed
+
+```bash
+php artisan migrate --seed
+```
+
+This will:
+- Create all tables (25 migrations)
+- Insert default admin account
+- Insert sample data (sliders, categories, village officials, statistics, etc.)
+
+---
+
+## How to Run
+
+```bash
 php artisan serve
 ```
 
-Akses Aplikasi di Web browser
+Access the application at: **http://127.0.0.1:8000**
 
-```sh
-127.0.0.1:8000
-```
+---
 
-<!-- Demo Login :
-1. Admin
-    - email     : admin@gmail.com
-    - password  : 1234
+## Default Account
 
+| Role | Email | Password |
+|---|---|---|
+| **Admin** | `admin@gmail.com` | `1234` |
 
-Demo Video : https://youtu.be/wY13QzFiipY?si=PE2Bx0N6XvA3q8de
+> **Admin login URL:** http://127.0.0.1:8000/login
 
-![Screenshot_1139](https://github.com/dwipurnomo12/portal-desa/assets/105181667/269695e3-e79c-45ee-94a7-d3bd260e64a9)
-![Screenshot_1138](https://github.com/dwipurnomo12/portal-desa/assets/105181667/17e3e13e-dbf9-463c-8d7a-d0ad42c5eb69)
-![Screenshot_1137](https://github.com/dwipurnomo12/portal-desa/assets/105181667/ae1020f7-232f-4585-9c0d-9e7408c30271)
-![Screenshot_1136](https://github.com/dwipurnomo12/portal-desa/assets/105181667/22bef1c0-1b78-41f8-a0ec-0fc88a2140e9)
-![Screenshot_1135](https://github.com/dwipurnomo12/portal-desa/assets/105181667/eeeee1f4-6718-4973-ac1d-44478dedafd7)
-![Screenshot_1134](https://github.com/dwipurnomo12/portal-desa/assets/105181667/e7bfc102-c141-4bcb-88cd-f54faa9a0dfc)
-![Screenshot_1133](https://github.com/dwipurnomo12/portal-desa/assets/105181667/dbbe4d82-f58c-4d43-9625-f28fb4039613) -->
+---
+
+## Folder Explanation
+
+| Folder | Description |
+|---|---|
+| `app/Models` | Eloquent models (24 models representing all database tables) |
+| `app/Http/Controllers` | Controller classes for public & admin functionality |
+| `app/Http/Middleware/LogoSite.php` | Global middleware that shares site identity & contact data to all views |
+| `database/migrations` | Database schema definitions |
+| `database/seeders` | Seed data including default admin account and sample village content |
+| `resources/views` | Blade templates — 3 layout groups (public, auth, admin) |
+| `public/assets` | Frontend theme assets (HTML template assets) |
+| `public/admin` | Admin panel theme assets |
+| `routes/web.php` | All application routes (public + admin) |
+
+---
+
+## Screenshots
+
+> _Add screenshots here. You can place images in a `screenshots/` folder at the project root and reference them like:_
+>
+> ```markdown
+> ![Homepage](screenshots/homepage.png)
+> ![Admin Dashboard](screenshots/admin-dashboard.png)
+> ```
+
+---
+
+## Notes
+
+- The seeder contains **sample data** (Desa Kragilan, Purworejo). Replace it with actual Dusun Teken data via the admin panel or by modifying `DatabaseSeeder.php`.
+- Images are stored in `storage/app/public/` and organized in subdirectories (`img-slider/`, `img-perangkat/`, `img-logo/`, `img-profil/`). After seeding, place the corresponding images in these directories.
+- Some features are partially commented out in the views but still functional in controllers (e.g., Video Profile on homepage, APBDesa menu). Uncomment the Blade sections in `resources/views/index.blade.php` and `resources/views/partials/header.blade.php` to enable them.
+- The application uses **Indonesian language (id)** locale and **Asia/Jakarta** timezone by default.
+- If you encounter any 404 errors on images, make sure `php artisan storage:link` has been executed.
