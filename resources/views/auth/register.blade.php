@@ -7,12 +7,12 @@
             <div class="row">
                 <div class="col-md-6 mt-5">
                     <a href="/" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                        <img src="admin/assets/images/auth/logo.png" width="220" alt="Logo">
+                        <img src="admin/assets/images/auth/logo teken.png" width="220" alt="Logo">
                     </a>
                 </div>
                 <div class="col-md-6">
                     <form method="POST" action="{{ route('register') }}">
-        
+
                         @if($errors->any())
                             <div class="alert alert-danger" role="alert">
                                 <ul>
@@ -22,7 +22,7 @@
                                 </ul>
                             </div>
                         @endif
-        
+
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama</label>
@@ -46,7 +46,7 @@
                                 <option value="2" selected>Pengunjung</option>
                             </select>
                         </div>
-        
+
                         <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Daftar</button>
                         <div class="d-flex align-items-center justify-content-center">
                             <p class="fs-4 mb-0 fw-bold">Sudah punya akun ?</p>
