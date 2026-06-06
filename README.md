@@ -251,7 +251,7 @@ Access the application at: **http://127.0.0.1:8000**
 
 ## Notes
 
-- The seeder contains **sample data** (Desa Kragilan, Purworejo). Replace it with actual Dusun Teken data via the admin panel or by modifying `DatabaseSeeder.php`.
+- The seeder now contains **sample data** for **Dusun Teken**. You can update the content anytime via the admin panel.
 - Images are stored in `storage/app/public/` and organized in subdirectories (`img-slider/`, `img-perangkat/`, `img-logo/`, `img-profil/`). After seeding, place the corresponding images in these directories.
 - Some features are partially commented out in the views but still functional in controllers (e.g., Video Profile on homepage, APBDesa menu). Uncomment the Blade sections in `resources/views/index.blade.php` and `resources/views/partials/header.blade.php` to enable them.
 - The application uses **Indonesian language (id)** locale and **Asia/Jakarta** timezone by default.

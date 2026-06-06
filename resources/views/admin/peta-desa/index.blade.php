@@ -42,7 +42,7 @@
                             <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat Lengkap <span style="color: red">*</span></label>
                                 <input type="text" class="form-control" name="alamat" id="alamat" value="{{ old('alamat', $petaDesa->alamat) }}">
-                                <i><small>Contoh : Karangmulyo, Purwodadi, Purworejo</small></i>
+                                <i><small>Contoh : Teken, Tileng, Girisubo, Gunungkidul</small></i>
                                 @error('alamat')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

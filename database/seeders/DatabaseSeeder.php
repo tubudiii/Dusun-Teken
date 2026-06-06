@@ -38,20 +38,20 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Slider::create([
-            'judul'         => 'Website Desa Kragilan',
-            'deskripsi'     => 'Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191',
+            'judul'         => 'Website Dusun Teken',
+            'deskripsi'     => 'Dusun Teken adalah sebuah dusun yang berada di kawasan Desa Tileng, Kecamatan Girisubo, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Website ini merupakan portal informasi resmi Dusun Teken.',
             'link_btn'      => '#',
             'img_slider'    => 'img-slider/slide-1.jpg'
         ]);
         Slider::create([
-            'judul'         => 'Sejarah Desa',
-            'deskripsi'     => 'Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191Desa Kragilan adalah desa yang terletak di kecamatan Gebang, Kabupaten Purworejo, Provinsi Jawa Tengah, Kode Pos 54191',
+            'judul'         => 'Sejarah Dusun',
+            'deskripsi'     => 'Dusun Teken merupakan bagian dari Desa Tileng yang memiliki kekayaan budaya dan tradisi. Terletak di Kecamatan Girisubo, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta.',
             'link_btn'      => '#',
             'img_slider'    => 'img-slider/slide-2.jpg'
         ]);
         Slider::create([
             'judul'         => 'Visi & Misi',
-            'deskripsi'     => 'Visi & Misi desa Kragilana dalah Terwujudnya masyarakat Desa Kragilan yang Bersih, Relegius, Sejahtera, Rapi dan Indah',
+            'deskripsi'     => 'Mewujudkan Dusun Teken yang maju, mandiri, dan sejahtera melalui gotong royong dan pembangunan yang berkelanjutan.',
             'link_btn'      => '#',
             'img_slider'    => 'img-slider/slide-3.jpg'
         ]);
@@ -75,22 +75,23 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Wilayah::create([
-            'judul' => 'Wilayah Desa Kragilan',
-            'body'  => 'Desa Kragilan adalah sebuah desa di kecamatan Gebang, Kabupaten Purworejo, Jawa Tengah, Indonesia. Desa ini terletak di sebelah barat pusat kecamatan Gebang, berjarak sekitar 5 kilometer. Secara geografis, desa Kragilan terletak di dataran tinggi dengan ketinggian sekitar 200 meter di atas permukaan laut. Desa ini berbatasan dengan desa Ngaglik di sebelah utara, desa Gebang di sebelah timur, desa Wadaslintang di sebelah selatan, dan desa Mlaras di sebelah barat. Desa Kragilan memiliki luas wilayah sekitar 3,5 kilometer persegi dengan jumlah penduduk sebanyak 866 jiwa pada tahun 2023. Mayoritas penduduk desa Kragilan bekerja di sektor pertanian, perkebunan, dan peternakan.  Infrastruktur di desa Kragilan cukup memadai, dengan jalan desa yang sudah beraspal dan beberapa fasilitas umum seperti sekolah, rumah sakit, dan pasar.',
+            'judul' => 'Wilayah Dusun Teken',
+            'body'  => 'Dusun Teken adalah sebuah dusun yang berada di kawasan Desa Tileng, Kecamatan Girisubo, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Dusun Teken memiliki potensi alam dan budaya yang khas, dengan masyarakat yang mayoritas bekerja di sektor pertanian, peternakan, dan usaha mikro kecil menengah. Wilayah Dusun Teken dikelilingi oleh perbukitan dan persawahan yang hijau, menciptakan pemandangan alam yang indah dan asri.',
             'user_id'   => 1
         ]);
 
         Sejarah::create([
-            'judul' => 'Sejarah Desa Kragilan',
-            'body'  => 'Desa Kragilan adalah sebuah desa di kecamatan Gebang, Kabupaten Purworejo, Jawa Tengah, Indonesia. Desa ini terletak di sebelah barat pusat kecamatan Gebang, berjarak sekitar 5 kilometer. Secara geografis, desa Kragilan terletak di dataran tinggi dengan ketinggian sekitar 200 meter di atas permukaan laut. Desa ini berbatasan dengan desa Ngaglik di sebelah utara, desa Gebang di sebelah timur, desa Wadaslintang di sebelah selatan, dan desa Mlaras di sebelah barat. Desa Kragilan memiliki luas wilayah sekitar 3,5 kilometer persegi dengan jumlah penduduk sebanyak 866 jiwa pada tahun 2023. Mayoritas penduduk desa Kragilan bekerja di sektor pertanian, perkebunan, dan peternakan.  Infrastruktur di desa Kragilan cukup memadai, dengan jalan desa yang sudah beraspal dan beberapa fasilitas umum seperti sekolah, rumah sakit, dan pasar.',
+            'judul' => 'Sejarah Dusun Teken',
+            'body'  => 'Dusun Teken merupakan bagian dari Desa Tileng yang terletak di Kecamatan Girisubo, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Sejarah Dusun Teken tidak terlepas dari sejarah Desa Tileng yang memiliki akar budaya dan tradisi yang kuat. Masyarakat Dusun Teken dikenal dengan semangat gotong royong dan kearifan lokal yang masih terjaga hingga saat ini. Dusun Teken terus berkembang seiring waktu, dengan berbagai pembangunan infrastruktur dan pemberdayaan masyarakat yang dilakukan secara bertahap.',
             'user_id'   => 1
         ]);
 
         VisiMisi::create([
-            'visi'      =>  'Terwujudnya Desa Kragilan yang sejahtera, mandiri, dan berbudaya',
-            'misi'      =>  ' - Meningkatkan perekonomian masyarakat melalui pengembangan potensi pertanian, perkebunan, dan pariwisata
-                            - Meningkatkan kualitas sumber daya manusia melalui pendidikan dan kesehatan
-                            - Meningkatkan kesadaran masyarakat akan pentingnya kelestarian lingkungan',
+            'visi'      =>  'Terwujudnya Dusun Teken yang maju, mandiri, sejahtera, dan berbudaya',
+            'misi'      =>  ' - Meningkatkan perekonomian masyarakat melalui pengembangan potensi pertanian, peternakan, dan UMKM
+                            - Meningkatkan kualitas sumber daya manusia melalui pendidikan dan pelatihan keterampilan
+                            - Meningkatkan kesadaran masyarakat akan pentingnya gotong royong dan kelestarian lingkungan
+                            - Mengembangkan potensi wisata dan budaya lokal Dusun Teken',
             'user_id'   => 1
         ]);
 
@@ -182,15 +183,15 @@ class DatabaseSeeder extends Seeder
             'user_id'       => 1
         ]);
         Peta::create([
-            'judul'         => 'Peta Desa Kragilan',
-            'alamat'        => 'Kragilan, Gebang, Purworejo',
+            'judul'         => 'Peta Dusun Teken',
+            'alamat'        => 'Teken, Tileng, Girisubo, Gunungkidul',
             'user_id'       => 1
         ]);
 
         Kontak::create([
-            'lokasi'    => 'Kragilan, Gebang, Purworejo',
-            'email'     => 'purnomodwi174@gmail.com',
-            'no_hp'     => '081229248179',
+            'lokasi'    => 'Teken, Tileng, Girisubo, Gunungkidul, DI Yogyakarta',
+            'email'     => 'dusunteken@gmail.com',
+            'no_hp'     => '081234567890',
             'user_id'   => 1
         ]);
 
@@ -200,12 +201,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Situs::create([
-            'logo'      => 'img-logo/DESA KRAGILAN.png',
-            'nm_desa'   => 'Desa Kragilan',
-            'kecamatan' => 'Gebang',
-            'kabupaten' => 'Purworejo',
-            'provinsi'  => 'Jawa Tengah',
-            'kode_pos'  => 54173,
+            'logo'      => 'img-logo/logo-dusun-teken.png',
+            'nm_desa'   => 'Dusun Teken',
+            'kecamatan' => 'Girisubo',
+            'kabupaten' => 'Gunungkidul',
+            'provinsi'  => 'Daerah Istimewa Yogyakarta',
+            'kode_pos'  => 55883,
             'user_id'   =>  1
         ]);
     }

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Authentication - Website Portal Desa Kragilan</title>
+  <title>Authentication - Website Portal Dusun Teken</title>
   <link rel="shortcut icon" type="image/png" href="admin/assets/images/logos/logo teken.png" />
   <link rel="stylesheet" href="admin/assets/css/styles.min.css" />
 </head>

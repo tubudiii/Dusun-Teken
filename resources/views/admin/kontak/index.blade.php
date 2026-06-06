@@ -49,7 +49,7 @@
                             <div class="mb-3">
                                 <label for="lokasi" class="form-label">Alamat Lengkap <span style="color: red">*</span></label>
                                 <input type="text" class="form-control" name="lokasi" id="lokasi" value="{{ old('lokasi', $kontak->lokasi) }}">
-                                <i><small>Contoh : Karangmulyo, Purwodadi, Purworejo</small></i>
+                                <i><small>Contoh : Teken, Tileng, Girisubo, Gunungkidul</small></i>
                                 @error('lokasi')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
